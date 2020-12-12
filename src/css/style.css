@@ -7,7 +7,7 @@
 }
 
 input:checked + label i {
-  background: url(/images/svg/heart-solid.svg);
+  background: url(../../images/svg/heart-solid.svg);
   /* la couleur du vsg est modifié dans le code source */
   -webkit-animation: heart 3s forwards ease;
           animation: heart 3s forwards ease;
@@ -29,7 +29,7 @@ input:checked + label i {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-    background: url(/images/svg/heart-solid.svg);
+    background: url(../../images/svg/heart-solid.svg);
   }
 }
 
@@ -46,7 +46,7 @@ input:checked + label i {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-    background: url(/images/svg/heart-solid.svg);
+    background: url(../../images/svg/heart-solid.svg);
   }
 }
 

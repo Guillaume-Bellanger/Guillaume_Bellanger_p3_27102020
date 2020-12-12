@@ -29,7 +29,7 @@ $background-image: linear-gradient(#ff79da -10%, #9356dc 150%);
 }
 
 input:checked + label i {
-  background: url(/images/svg/heart-solid.svg); /* la couleur du vsg est modifié dans le code source */
+  background: url(../../images/svg/heart-solid.svg); /* la couleur du vsg est modifié dans le code source */
   animation: heart 3s forwards ease;
   color: transparent; /*couleur du bord transparent au clic */
   cursor: pointer;
@@ -47,7 +47,7 @@ input:checked + label i {
   100% {
     
     transform: scale(1);
-    background: url(/images/svg/heart-solid.svg);
+    background: url(../../images/svg/heart-solid.svg);
     
   }
 }

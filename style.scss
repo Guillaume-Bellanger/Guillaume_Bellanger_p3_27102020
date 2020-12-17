@@ -4,14 +4,11 @@
 @mixin ft-family-text {
   font-family: "Roboto", sans-serif;
 }
-@mixin boxshadow($color: $background-color) {
-  box-shadow: 2px 4px 8px 3px darken($color, 10%);
-}
 $primary-color: #9356dc;
 $secondary-color: #ff79da;
 $tertiary-color: #99e2d0;
-$background-color: darken($color: #f2f2f2, $amount: 3%);
-$background-image: linear-gradient(#ff79da -10%, #9356dc 150%);
+$background-color: darken($color: #f2f2f2, $amount: 3%); /*assombrir la couleur de 3% */
+$background-image: linear-gradient(#ff79da -10%, #9356dc 150%); /*degradé de couleur */
 
 
 
@@ -20,7 +17,7 @@ $background-image: linear-gradient(#ff79da -10%, #9356dc 150%);
 
 
 
-
+                                                         
                   /*animation coeur*/
 
 
@@ -28,8 +25,8 @@ $background-image: linear-gradient(#ff79da -10%, #9356dc 150%);
   display: none;  /*pour cacher la case de l'imput*/
 }
 
-input:checked + label i {
-  background: url(../../images/svg/heart-solid.svg); /* la couleur du vsg est modifié dans le code source */
+input:checked + label i { /* animation qui "remplace" le coeur far fa-heart du html*/
+  background: url(/images/svg/heart-solid.svg); /* la couleur du vsg est modifié dans le code source */
   animation: heart 3s forwards ease;
   color: transparent; /*couleur du bord transparent au clic */
   cursor: pointer;
@@ -37,8 +34,8 @@ input:checked + label i {
 @keyframes heart {
   0% {
     
-    transform: scale(1); 
-    
+    transform: scale(1); /* taille d'origine */
+  
   }
   50% {
    
@@ -46,8 +43,8 @@ input:checked + label i {
   }
   100% {
     
-    transform: scale(1);
-    background: url(../../images/svg/heart-solid.svg);
+    transform: scale(1); /*taille d'origine de nouveau */
+    background: url(/images/svg/heart-solid.svg);
     
   }
 }
@@ -57,7 +54,7 @@ input:checked + label i {
 
 
 .menuanim {
-    &__container { /*container contenant le circle et l'icon */
+    &__container { /*container contenant le cercle et l'icon */
         background: $tertiary-color;
         position: relative; /*pour préparer les futurs positions abso de circle et de l'icon*/
         border-radius: 0 1rem 1rem 0;
@@ -94,8 +91,7 @@ input:checked + label i {
 }
 
 .text:hover {
-    /*background: transparentize($primary-color, 0.85);*/
-    cursor: pointer;
+     cursor: pointer;
     .text__price {
         transform: translateX(-5rem); /*décale le prix vers la gauche de 5rem */
     }
@@ -108,11 +104,11 @@ input:checked + label i {
             transform: scaleX(1); /*affiche le container */
         }
         &__circle {
-                transform: rotate(360deg); 
+                transform: rotate(360deg); /* fait tourner le cercle */
         }
     }
 }
-           /*menu à l'arrivée */
+           /*menu à l'arrivée : fait apparaitre un a un les sections entrance, dish et desserts*/
 
 
 
@@ -129,7 +125,7 @@ input:checked + label i {
 @keyframes apparition { /*remonte doucement et progressivement les titres */
     0% {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(10px); /*remonte vers le haut  */
     }
     25% {
       opacity: 1;
@@ -164,7 +160,7 @@ input:checked + label i {
     position: fixed;
     left: calc(50% - 120px);
     top: 25%;
-    opacity: 0; /*ne se vois pas pour l'instant d'ou le opacity : 0 */
+    opacity: 1; /*ne se vois pas pour l'instant d'ou le opacity : 0 */
     &::before { /*second demi cercle*/ 
         animation: spin 3s 100ms forwards linear;
         border: solid 15px transparent;
@@ -178,7 +174,7 @@ input:checked + label i {
         position: absolute;
         left: 0;
         top: 0;
-        opacity: 0;
+        opacity: 1;
     }
     &::after {
         animation: spin 3s 600ms forwards linear;
@@ -193,7 +189,7 @@ input:checked + label i {
         position: absolute;
         top: 15px;
         left: 15px;
-        opacity: 0;
+        opacity: 1;
   }
 }
 
@@ -211,7 +207,7 @@ input:checked + label i {
     80% {
         transform: rotate(360deg);
         opacity: 0.5; /*fait disparaitre progressivement */ 
-    }
+   }
     90% {
         transform: rotate(648deg);
         opacity: 0;
@@ -245,7 +241,7 @@ input:checked + label i {
 @keyframes finish {
     0% {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1); /*change la taille a 100%, pour l'afficher dans son integralité */
     }
     30% {
         opacity: 0.9;
@@ -264,33 +260,6 @@ input:checked + label i {
         display: none;
     }
 } 
-
-
-            /*after load spinner */
-
-
-#pagetoload {
-    z-index: 3;
-    opacity: 1;
-    animation: page 1s 1s both;
-}
-
-@keyframes page {
-    0% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 0.9;
-    }
-    100% {
-        opacity: 1;
-    }
-} 
-
-
-
-
-
 
 /*index*/
 
@@ -334,10 +303,8 @@ body {
       padding-left: 1rem;
       padding-right: 1rem;
     }
-    &__quote h4 {
-      
-      font-weight: normal;  
-     
+    &__quote h4 {      
+      font-weight: normal;       
     }
     &__button {
       background-image: linear-gradient(#ff79da -10%, #9356dc 150%);
@@ -424,7 +391,7 @@ h6 {
     }
   }
 }
-.filter-item:last-child {
+.filter-item:last-child {/*dernier filter*/
   margin-bottom: 4rem;
 }
 .restaurant {
@@ -638,7 +605,7 @@ body{
         display: flex;
         justify-content: space-between; 
         position: relative;
-        &:hover, &:active { // Changement de couleur de l'élément au survol
+        &:hover, &:active { /* Changement de couleur de l'élément au survol*/
             background: transparentize($primary-color, 0.85);
         }
     }
@@ -654,11 +621,11 @@ body{
         margin-right: 15px;
         transform-origin: right;
         transform:  scaleX(1);
-        transition: transform 300ms 100ms linear;//Prépare l'animation où le prix bouge
+        transition: transform 300ms 100ms linear; /*Prépare l'animation où le prix bouge*/
     }
     &__specific {
         h3, p {
-            overflow: hidden; //Pour éviter que le texte se mette à la ligne 
+            overflow: hidden; /*Pour éviter que le texte se mette à la ligne */
             white-space: nowrap;
             text-overflow: ellipsis; 
             

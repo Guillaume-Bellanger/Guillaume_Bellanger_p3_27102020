@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*assombrir la couleur de 3% */
+/*degradé de couleur */
 /*ANIMATION / TRANSITION */
 /*animation coeur*/
 .restaurant-card input, .headercard input {
@@ -7,7 +9,8 @@
 }
 
 input:checked + label i {
-  background: url(../../images/svg/heart-solid.svg);
+  /* animation qui "remplace" le coeur far fa-heart du html*/
+  background: url(/images/svg/heart-solid.svg);
   /* la couleur du vsg est modifié dans le code source */
   -webkit-animation: heart 3s forwards ease;
           animation: heart 3s forwards ease;
@@ -20,6 +23,7 @@ input:checked + label i {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
+    /* taille d'origine */
   }
   50% {
     -webkit-transform: scale(1.3);
@@ -29,7 +33,8 @@ input:checked + label i {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-    background: url(../../images/svg/heart-solid.svg);
+    /*taille d'origine de nouveau */
+    background: url(/images/svg/heart-solid.svg);
   }
 }
 
@@ -37,6 +42,7 @@ input:checked + label i {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
+    /* taille d'origine */
   }
   50% {
     -webkit-transform: scale(1.3);
@@ -46,13 +52,14 @@ input:checked + label i {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-    background: url(../../images/svg/heart-solid.svg);
+    /*taille d'origine de nouveau */
+    background: url(/images/svg/heart-solid.svg);
   }
 }
 
 /*case à cocher  */
 .menuanim__container {
-  /*container contenant le circle et l'icon */
+  /*container contenant le cercle et l'icon */
   background: #99e2d0;
   position: relative;
   /*pour préparer les futurs positions abso de circle et de l'icon*/
@@ -107,7 +114,6 @@ input:checked + label i {
 }
 
 .text:hover {
-  /*background: transparentize($primary-color, 0.85);*/
   cursor: pointer;
 }
 
@@ -132,9 +138,10 @@ input:checked + label i {
 .text:hover .menuanim__circle {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
+  /* fait tourner le cercle */
 }
 
-/*menu à l'arrivée */
+/*menu à l'arrivée : fait apparaitre un a un les sections entrance, dish et desserts*/
 .entrance {
   -webkit-animation: apparition  1200ms ease-in-out 400ms both;
           animation: apparition  1200ms ease-in-out 400ms both;
@@ -156,6 +163,7 @@ input:checked + label i {
     opacity: 0;
     -webkit-transform: translateY(10px);
             transform: translateY(10px);
+    /*remonte vers le haut  */
   }
   25% {
     opacity: 1;
@@ -185,6 +193,7 @@ input:checked + label i {
     opacity: 0;
     -webkit-transform: translateY(10px);
             transform: translateY(10px);
+    /*remonte vers le haut  */
   }
   25% {
     opacity: 1;
@@ -225,7 +234,7 @@ input:checked + label i {
   position: fixed;
   left: calc(50% - 120px);
   top: 25%;
-  opacity: 0;
+  opacity: 1;
   /*ne se vois pas pour l'instant d'ou le opacity : 0 */
 }
 
@@ -244,7 +253,7 @@ input:checked + label i {
   position: absolute;
   left: 0;
   top: 0;
-  opacity: 0;
+  opacity: 1;
 }
 
 .loader__spinner::after {
@@ -261,7 +270,7 @@ input:checked + label i {
   position: absolute;
   top: 15px;
   left: 15px;
-  opacity: 0;
+  opacity: 1;
 }
 
 @-webkit-keyframes spin {
@@ -355,6 +364,7 @@ input:checked + label i {
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1);
+    /*change la taille a 100%, pour l'afficher dans son integralité */
   }
   30% {
     opacity: 0.9;
@@ -384,6 +394,7 @@ input:checked + label i {
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1);
+    /*change la taille a 100%, pour l'afficher dans son integralité */
   }
   30% {
     opacity: 0.9;
@@ -405,38 +416,6 @@ input:checked + label i {
     -webkit-transform: scale(0);
             transform: scale(0);
     display: none;
-  }
-}
-
-/*after load spinner */
-#pagetoload {
-  z-index: 3;
-  opacity: 1;
-  -webkit-animation: page 1s 1s both;
-          animation: page 1s 1s both;
-}
-
-@-webkit-keyframes page {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes page {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
@@ -630,6 +609,7 @@ h6 {
 }
 
 .filter-item:last-child {
+  /*dernier filter*/
   margin-bottom: 4rem;
 }
 
@@ -889,6 +869,7 @@ body {
 }
 
 .entrance__text:hover, .entrance__text:active, .dish__text:hover, .dish__text:active, .desserts__text:hover, .desserts__text:active {
+  /* Changement de couleur de l'élément au survol*/
   background: rgba(147, 86, 220, 0.15);
 }
 
@@ -907,10 +888,12 @@ body {
   transition: -webkit-transform 300ms 100ms linear;
   transition: transform 300ms 100ms linear;
   transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
+  /*Prépare l'animation où le prix bouge*/
 }
 
 .text__specific h3, .text__specific p {
   overflow: hidden;
+  /*Pour éviter que le texte se mette à la ligne */
   white-space: nowrap;
   text-overflow: ellipsis;
 }

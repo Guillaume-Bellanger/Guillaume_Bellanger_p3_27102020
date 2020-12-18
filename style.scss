@@ -160,7 +160,7 @@ input:checked + label i { /* animation qui "remplace" le coeur far fa-heart du h
     position: fixed;
     left: calc(50% - 120px);
     top: 25%;
-    opacity: 1; /*ne se vois pas pour l'instant d'ou le opacity : 0 */
+    opacity: 0; /*ne se vois pas pour l'instant d'ou le opacity : 0 */
     &::before { /*second demi cercle*/ 
         animation: spin 3s 100ms forwards linear;
         border: solid 15px transparent;
@@ -174,7 +174,7 @@ input:checked + label i { /* animation qui "remplace" le coeur far fa-heart du h
         position: absolute;
         left: 0;
         top: 0;
-        opacity: 1;
+        opacity: 0;
     }
     &::after {
         animation: spin 3s 600ms forwards linear;
@@ -189,7 +189,7 @@ input:checked + label i { /* animation qui "remplace" le coeur far fa-heart du h
         position: absolute;
         top: 15px;
         left: 15px;
-        opacity: 1;
+        opacity: 0;
   }
 }
 

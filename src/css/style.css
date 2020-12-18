@@ -2,221 +2,6 @@
 /*assombrir la couleur de 3% */
 /*degradé de couleur */
 /*ANIMATION / TRANSITION */
-/*animation coeur*/
-.restaurant-card input, .headercard input {
-  display: none;
-  /*pour cacher la case de l'imput*/
-}
-
-input:checked + label i {
-  /* animation qui "remplace" le coeur far fa-heart du html*/
-  background: url(/images/svg/heart-solid.svg);
-  /* la couleur du vsg est modifié dans le code source */
-  -webkit-animation: heart 3s forwards ease;
-          animation: heart 3s forwards ease;
-  color: transparent;
-  /*couleur du bord transparent au clic */
-  cursor: pointer;
-}
-
-@-webkit-keyframes heart {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    /* taille d'origine */
-  }
-  50% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-    /* change la taille du coeur de maniere uniforme de 30%*/
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    /*taille d'origine de nouveau */
-    background: url(/images/svg/heart-solid.svg);
-  }
-}
-
-@keyframes heart {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    /* taille d'origine */
-  }
-  50% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-    /* change la taille du coeur de maniere uniforme de 30%*/
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    /*taille d'origine de nouveau */
-    background: url(/images/svg/heart-solid.svg);
-  }
-}
-
-/*case à cocher  */
-.menuanim__container {
-  /*container contenant le cercle et l'icon */
-  background: #99e2d0;
-  position: relative;
-  /*pour préparer les futurs positions abso de circle et de l'icon*/
-  border-radius: 0 1rem 1rem 0;
-  height: 5rem;
-  width: 5rem;
-  margin-top: -8px;
-  margin-bottom: -8px;
-  opacity: 0;
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  /*permet de faire commencer l'animation de la droite */
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  /*modifid la taille du container de 0% */
-  -webkit-transition: opacity 100ms, -webkit-transform 300ms 100ms linear;
-  transition: opacity 100ms, -webkit-transform 300ms 100ms linear;
-  transition: opacity 100ms, transform 300ms 100ms linear;
-  transition: opacity 100ms, transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
-  /* property et  duration, propery duration delay et fonction(lineair) */
-}
-
-.menuanim__circle {
-  background: #f3f3f3;
-  position: absolute;
-  top: 30%;
-  left: 25%;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  /*animation commence a 0 degré */
-  -webkit-transition: -webkit-transform 300ms 100ms linear;
-  transition: -webkit-transform 300ms 100ms linear;
-  transition: transform 300ms 100ms linear;
-  transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
-  /* property duration delay et fonction lineair*/
-}
-
-.menuanim__icon {
-  border-top: 5px solid #99e2d0;
-  border-left: 5px solid #99e2d0;
-  position: absolute;
-  top: 0.2rem;
-  left: 0.5rem;
-  width: 0.5rem;
-  height: 0.8rem;
-  -webkit-transform: rotate(220deg);
-          transform: rotate(220deg);
-  /*fait tourner a 220deg l'icone */
-}
-
-.text:hover {
-  cursor: pointer;
-}
-
-.text:hover .text__price {
-  -webkit-transform: translateX(-5rem);
-          transform: translateX(-5rem);
-  /*décale le prix vers la gauche de 5rem */
-}
-
-.text:hover .text__specific {
-  width: 50%;
-}
-
-.text:hover .menuanim__container {
-  opacity: 1;
-  /*permet au container plus haut d"apparaitre" */
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  /*affiche le container */
-}
-
-.text:hover .menuanim__circle {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-  /* fait tourner le cercle */
-}
-
-/*menu à l'arrivée : fait apparaitre un a un les sections entrance, dish et desserts*/
-.entrance {
-  -webkit-animation: apparition  1200ms ease-in-out 400ms both;
-          animation: apparition  1200ms ease-in-out 400ms both;
-}
-
-.dish {
-  -webkit-animation: apparition 1200ms ease-in-out 800ms both;
-          animation: apparition 1200ms ease-in-out 800ms both;
-}
-
-.desserts {
-  -webkit-animation: apparition 1200ms ease-in-out 1200ms both;
-          animation: apparition 1200ms ease-in-out 1200ms both;
-}
-
-@-webkit-keyframes apparition {
-  /*remonte doucement et progressivement les titres */
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-    /*remonte vers le haut  */
-  }
-  25% {
-    opacity: 1;
-    -webkit-transform: translateY(8px);
-            transform: translateY(8px);
-  }
-  50% {
-    opacity: 1;
-    -webkit-transform: translateY(6px);
-            transform: translateY(6px);
-  }
-  75% {
-    opacity: 1;
-    -webkit-transform: translateY(4px);
-            transform: translateY(4px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes apparition {
-  /*remonte doucement et progressivement les titres */
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-    /*remonte vers le haut  */
-  }
-  25% {
-    opacity: 1;
-    -webkit-transform: translateY(8px);
-            transform: translateY(8px);
-  }
-  50% {
-    opacity: 1;
-    -webkit-transform: translateY(6px);
-            transform: translateY(6px);
-  }
-  75% {
-    opacity: 1;
-    -webkit-transform: translateY(4px);
-            transform: translateY(4px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
 /*loading spinner */
 .loader__spinner {
   /*premier demi cercle */
@@ -232,6 +17,7 @@ input:checked + label i {
   height: 250px;
   width: 250px;
   position: fixed;
+  /*va eviter le defilement */
   left: calc(50% - 120px);
   top: 25%;
   opacity: 0;
@@ -417,6 +203,221 @@ input:checked + label i {
             transform: scale(0);
     display: none;
   }
+}
+
+/*animation coeur*/
+.restaurant-card input, .headercard input {
+  display: none;
+  /*pour cacher la case de l'imput*/
+}
+
+input:checked + label i {
+  /* animation qui "remplace" le coeur far fa-heart du html*/
+  background: url(/images/svg/heart-solid.svg);
+  /* la couleur du vsg est modifié dans le code source */
+  -webkit-animation: heart 3s forwards ease;
+          animation: heart 3s forwards ease;
+  color: transparent;
+  /*couleur du bord transparent au clic */
+  cursor: pointer;
+}
+
+@-webkit-keyframes heart {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    /* taille d'origine */
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+    /* change la taille du coeur de maniere uniforme de 30%*/
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    /*taille d'origine de nouveau */
+    background: url(/images/svg/heart-solid.svg);
+  }
+}
+
+@keyframes heart {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    /* taille d'origine */
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+    /* change la taille du coeur de maniere uniforme de 30%*/
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    /*taille d'origine de nouveau */
+    background: url(/images/svg/heart-solid.svg);
+  }
+}
+
+/*menu à l'arrivée : fait apparaitre un a un les sections entrance, dish et desserts*/
+.entrance {
+  -webkit-animation: apparition  1200ms ease-in-out 400ms both;
+          animation: apparition  1200ms ease-in-out 400ms both;
+}
+
+.dish {
+  -webkit-animation: apparition 1200ms ease-in-out 800ms both;
+          animation: apparition 1200ms ease-in-out 800ms both;
+}
+
+.desserts {
+  -webkit-animation: apparition 1200ms ease-in-out 1200ms both;
+          animation: apparition 1200ms ease-in-out 1200ms both;
+}
+
+@-webkit-keyframes apparition {
+  /*remonte doucement et progressivement les titres */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+    /*remonte vers le haut  */
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes apparition {
+  /*remonte doucement et progressivement les titres */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+    /*remonte vers le haut  */
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/*case à cocher  */
+.menuanim__container {
+  /*container contenant le cercle et l'icon */
+  background: #99e2d0;
+  position: relative;
+  /*pour préparer les futurs positions abso de circle et de l'icon*/
+  border-radius: 0 1rem 1rem 0;
+  height: 5rem;
+  width: 5rem;
+  margin-top: -8px;
+  margin-bottom: -8px;
+  opacity: 0;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  /*permet de faire commencer l'animation de la droite */
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  /*modifid de la largeur */
+  -webkit-transition: opacity 100ms, -webkit-transform 300ms 100ms linear;
+  transition: opacity 100ms, -webkit-transform 300ms 100ms linear;
+  transition: opacity 100ms, transform 300ms 100ms linear;
+  transition: opacity 100ms, transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
+  /* property et  duration, propery duration delay et fonction(lineair) */
+}
+
+.menuanim__circle {
+  background: #f3f3f3;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  /*animation commence a 0 degré */
+  -webkit-transition: -webkit-transform 300ms 100ms linear;
+  transition: -webkit-transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
+  /* property duration delay et fonction lineair*/
+}
+
+.menuanim__icon {
+  border-top: 5px solid #99e2d0;
+  border-left: 5px solid #99e2d0;
+  position: absolute;
+  top: 0.2rem;
+  left: 0.5rem;
+  width: 0.5rem;
+  height: 0.8rem;
+  -webkit-transform: rotate(220deg);
+          transform: rotate(220deg);
+  /*fait tourner a 220deg l'icone pour la fin de l'animation */
+}
+
+.text:hover {
+  cursor: pointer;
+}
+
+.text:hover .text__price {
+  -webkit-transform: translateX(-5rem);
+          transform: translateX(-5rem);
+  /*décale le prix vers la gauche de 5rem */
+}
+
+.text:hover .text__specific {
+  width: 50%;
+}
+
+.text:hover .menuanim__container {
+  opacity: 1;
+  /*permet au container plus haut d"apparaitre" */
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  /*affiche le container */
+}
+
+.text:hover .menuanim__circle {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  /* fait tourner le cercle */
 }
 
 /*index*/
